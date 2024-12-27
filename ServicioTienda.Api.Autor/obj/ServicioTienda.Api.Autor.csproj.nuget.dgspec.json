@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andym\\Desktop\\GitHub\\ServicioCorreo\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj": {}
+    "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andym\\Desktop\\GitHub\\ServicioCorreo\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj": {
+    "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andym\\Desktop\\GitHub\\ServicioCorreo\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj",
+        "projectUniqueName": "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj",
         "projectName": "ServicioTienda.Api.Autor",
-        "projectPath": "C:\\Users\\andym\\Desktop\\GitHub\\ServicioCorreo\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj",
+        "projectPath": "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj",
         "packagesPath": "C:\\Users\\andym\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andym\\Desktop\\GitHub\\ServicioCorreo\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor\\obj\\",
+        "outputPath": "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

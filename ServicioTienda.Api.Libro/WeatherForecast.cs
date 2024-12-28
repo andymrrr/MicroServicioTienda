@@ -1,4 +1,4 @@
-namespace ServicioTienda.Api.Autor
+namespace ServicioTienda.Api.Libro
 {
     public class WeatherForecast
     {

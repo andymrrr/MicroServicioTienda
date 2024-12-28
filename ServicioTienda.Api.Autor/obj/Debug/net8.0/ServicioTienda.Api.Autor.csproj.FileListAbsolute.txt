@@ -220,3 +220,9 @@ C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\obj\D
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\obj\Debug\net8.0\ServicioTienda.Api.Autor.pdb
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\obj\Debug\net8.0\ServicioTienda.Api.Autor.genruntimeconfig.cache
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\obj\Debug\net8.0\ref\ServicioTienda.Api.Autor.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\MediatR.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\AutoMapper.dll

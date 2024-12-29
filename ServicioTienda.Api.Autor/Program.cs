@@ -17,7 +17,7 @@ builder.Services.AddDbContext<ContextAutor>(op =>
     op.UseNpgsql(builder.Configuration.GetConnectionString("AutorLibro"));
 });
 builder.Services.AddSwaggerGen();
-//Registrar MediaTR
+
 builder.Services.AddMediatR(opcion => opcion.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 //Registro Mapeo
 var cofiguracionMapeo = new MapperConfiguration(mc =>

@@ -15,6 +15,10 @@ builder.Services.AddDbContext<ContextCarrito>(op =>
     op.UseMySQL(builder.Configuration.GetConnectionString("CarritoCompra"));
 });
 builder.Services.AddMediatR(opcion => opcion.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+builder.Services.AddHttpClient("libros", config =>
+{
+    config.BaseAddress = new Uri(builder.Configuration["Servicios:libros"])
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

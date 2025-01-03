@@ -2,7 +2,7 @@
 using ServicioTienda.Api.CarritoCompra.Data.Context;
 using ServicioTienda.Api.CarritoCompra.Modelo;
 
-namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.CarritoSesiones
+namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.Comando.CarritoSesiones
 {
     public class RegistrarCarritoSesionHandler : IRequestHandler<RegistrarCarritoSesionComando, Unit>
     {
@@ -20,7 +20,7 @@ namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.CarritoSesio
 
             _context.CarritoSesions.Add(carritosesion);
             var value = await _context.SaveChangesAsync();
-            if (value ==0)
+            if (value == 0)
             {
                 throw new Exception("Error al registrar el carrito");
             }
@@ -42,9 +42,9 @@ namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.CarritoSesio
                 return Unit.Value;
             }
 
-          
-                throw new Exception("Error al registrar el carrito");
-           
+
+            throw new Exception("Error al registrar el carrito");
+
 
         }
     }

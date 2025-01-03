@@ -5,9 +5,13 @@ namespace ServicioTienda.Api.Libro.Data.Context
 {
     public class ContextLibreria : DbContext
     {
+        public ContextLibreria()
+        {
+                
+        }
         public ContextLibreria(DbContextOptions<ContextLibreria> options) : base(options)
         { }
 
-        public DbSet<Libreria> Librerias { get; set; }
+        public virtual DbSet<Libreria> Librerias { get; set; }
     }
 }

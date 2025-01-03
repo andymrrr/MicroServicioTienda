@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.CarritoSesiones
+namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.Comando.CarritoSesiones
 {
     public class RegistrarCarritoSesionComando : IRequest<Unit>
     {

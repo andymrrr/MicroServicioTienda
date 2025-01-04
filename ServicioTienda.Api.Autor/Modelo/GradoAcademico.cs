@@ -2,12 +2,12 @@
 {
     public class GradoAcademico
     {
-        public int GradoAcademicoId { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string CentroAcademico { get; set; }
         public DateTime? FechaGrado { get; set; }
 
-        public int AutorlibroId { get; set; }
+        public int ibroId { get; set; }
 
         public AutorLibro AutorLibro { get; set; }
 

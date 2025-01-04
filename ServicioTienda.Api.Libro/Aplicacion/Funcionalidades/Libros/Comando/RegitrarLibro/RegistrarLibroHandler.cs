@@ -14,14 +14,14 @@ namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Comando.Reg
         }
         public async Task<Unit> Handle(RegistrarLibroComando request, CancellationToken cancellationToken)
         {
-            var libro = new Libreria
+            var libro = new Modelo.Libros
             {
                 Titulo = request.Titulo,
                 FechaPublicacion = request.FechaPublicacion,
-                AutorLibro = request.AutorLibro
+                Autor = request.AutorLibro
             };
 
-            _context.Librerias.Add(libro);
+            _context.Libros.Add(libro);
             var resultado = await _context.SaveChangesAsync();
 
             if (resultado > 0)

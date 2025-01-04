@@ -12,6 +12,6 @@ namespace ServicioTienda.Api.Libro.Data.Context
         public ContextLibreria(DbContextOptions<ContextLibreria> options) : base(options)
         { }
 
-        public virtual DbSet<Libreria> Librerias { get; set; }
+        public virtual DbSet<Modelo.Libros> Libros { get; set; }
     }
 }

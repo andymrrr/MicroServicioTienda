@@ -17,7 +17,7 @@ namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Consultas.B
         }
         public async Task<LibroVm> Handle(BuscarLibroGuidConsulta request, CancellationToken cancellationToken)
         {
-            var autor = await _context.Librerias.Where(d => d.LibreriaId == request.LibroGuid).FirstOrDefaultAsync();
+            var autor = await _context.Libros.Where(d => d.Id == request.LibroGuid).FirstOrDefaultAsync();
 
             if (autor is null)
             {

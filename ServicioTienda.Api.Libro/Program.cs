@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContextLibreria>(opt =>
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("Libreria"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Libro"));
 });
 //Registro Mapeo
 var cofiguracionMapeo = new MapperConfiguration(mc =>

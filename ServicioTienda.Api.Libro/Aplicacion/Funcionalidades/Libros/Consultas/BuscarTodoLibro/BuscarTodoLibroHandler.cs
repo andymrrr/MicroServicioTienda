@@ -17,7 +17,7 @@ namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Consultas.B
         }
         public async Task<List<LibroVm>> Handle(BuscarTodoLibroConsulta request, CancellationToken cancellationToken)
         {
-            var libros = await _context.Librerias.ToListAsync();
+            var libros = await _context.Libros.ToListAsync();
             var autoresVm = _mapper.Map<List<LibroVm>>(libros);
             return autoresVm;
         }

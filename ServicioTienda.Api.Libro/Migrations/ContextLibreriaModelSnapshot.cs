@@ -22,13 +22,13 @@ namespace ServicioTienda.Api.Libro.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ServicioTienda.Api.Libro.Modelo.Libreria", b =>
+            modelBuilder.Entity("ServicioTienda.Api.Libro.Modelo.Libros", b =>
                 {
-                    b.Property<Guid?>("LibreriaId")
+                    b.Property<Guid?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AutorLibro")
+                    b.Property<Guid?>("Autor")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("FechaPublicacion")
@@ -38,9 +38,9 @@ namespace ServicioTienda.Api.Libro.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("LibreriaId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Librerias");
+                    b.ToTable("Libros");
                 });
 #pragma warning restore 612, 618
         }

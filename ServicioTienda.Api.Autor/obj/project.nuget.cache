@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "65U87FiDIvfZkIyTa9zPVt9ExOHX16xnyiNvEg+ohqiP7N3XOILYxSqUqYG7cekIhpe7fgcxwnjpdnkhfLOKUQ==",
+  "dgSpecHash": "BAASZFLJd6NEtpHXjljRFLayE7WUh4cSh4dgiGtQ7dCtdamw3FH7Sx46UOgvaP9m2350DXGgrKv8kGCJ/t5ziA==",
   "success": true,
   "projectFilePath": "C:\\Users\\andym\\Desktop\\GitHub\\MicroServicioTienda\\ServicioTienda.Api.Autor\\ServicioTienda.Api.Autor.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,7 @@
     "C:\\Users\\andym\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\andym\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\andym\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\andym\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\andym\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\andym\\.nuget\\packages\\npgsql\\8.0.6\\npgsql.8.0.6.nupkg.sha512",
     "C:\\Users\\andym\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.11\\npgsql.entityframeworkcore.postgresql.8.0.11.nupkg.sha512",

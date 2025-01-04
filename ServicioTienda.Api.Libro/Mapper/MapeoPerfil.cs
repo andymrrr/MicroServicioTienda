@@ -8,7 +8,7 @@ namespace ServicioTienda.Api.Libro.Mapper
     {
         public MapeoPerfil()
         {
-            CreateMap<Libreria, LibroVm>().ReverseMap();
+            CreateMap<Libros, LibroVm>().ReverseMap();
         }
     }
 }

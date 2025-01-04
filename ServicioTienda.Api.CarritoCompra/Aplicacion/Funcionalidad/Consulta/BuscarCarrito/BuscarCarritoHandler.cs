@@ -31,7 +31,7 @@ namespace ServicioTienda.Api.CarritoCompra.Aplicacion.Funcionalidad.Consulta.Bus
 
                     var carritoDetalle = new CarritoDetalleVm
                     {
-                        LibroId = objLibro.LibreriaId,
+                        LibroId = objLibro.Id,
                         TituloLibro= objLibro.Titulo,
                         FechaPublicacion = objLibro.FechaPublicacion,
                     };

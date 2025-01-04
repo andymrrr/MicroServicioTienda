@@ -24,11 +24,11 @@ namespace ServicioTienda.Api.Autor.Migrations
 
             modelBuilder.Entity("ServicioTienda.Api.Autor.Modelo.AutorLibro", b =>
                 {
-                    b.Property<int>("AutorlibroId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("AutorlibroId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Apellido")
                         .IsRequired()
@@ -45,20 +45,20 @@ namespace ServicioTienda.Api.Autor.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("AutorlibroId");
+                    b.HasKey("Id");
 
                     b.ToTable("AutorLibros");
                 });
 
             modelBuilder.Entity("ServicioTienda.Api.Autor.Modelo.GradoAcademico", b =>
                 {
-                    b.Property<int>("GradoAcademicoId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("GradoAcademicoId"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AutorlibroId")
+                    b.Property<int>("AutorLibroId")
                         .HasColumnType("integer");
 
                     b.Property<string>("CentroAcademico")
@@ -76,9 +76,12 @@ namespace ServicioTienda.Api.Autor.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("GradoAcademicoId");
+                    b.Property<int>("ibroId")
+                        .HasColumnType("integer");
 
-                    b.HasIndex("AutorlibroId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("AutorLibroId");
 
                     b.ToTable("GradoAcademicos");
                 });
@@ -87,7 +90,7 @@ namespace ServicioTienda.Api.Autor.Migrations
                 {
                     b.HasOne("ServicioTienda.Api.Autor.Modelo.AutorLibro", "AutorLibro")
                         .WithMany("gradoAcademicos")
-                        .HasForeignKey("AutorlibroId")
+                        .HasForeignKey("AutorLibroId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

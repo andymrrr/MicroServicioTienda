@@ -14,7 +14,7 @@ builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddDbContext<ContextAutor>(op =>
 {
-    op.UseNpgsql(builder.Configuration.GetConnectionString("AutorLibro"));
+    op.UseNpgsql(builder.Configuration.GetConnectionString("Autor"));
 });
 builder.Services.AddSwaggerGen();
 

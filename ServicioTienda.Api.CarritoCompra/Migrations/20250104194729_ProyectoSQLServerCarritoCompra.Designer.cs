@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ServicioTienda.Api.CarritoCompra.Data.Context;
@@ -11,8 +12,8 @@ using ServicioTienda.Api.CarritoCompra.Data.Context;
 namespace ServicioTienda.Api.CarritoCompra.Migrations
 {
     [DbContext(typeof(ContextCarrito))]
-    [Migration("20241229114506_initMigrationMySql")]
-    partial class initMigrationMySql
+    [Migration("20250104194729_ProyectoSQLServerCarritoCompra")]
+    partial class ProyectoSQLServerCarritoCompra
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +21,9 @@ namespace ServicioTienda.Api.CarritoCompra.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.11")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("ServicioTienda.Api.CarritoCompra.Modelo.CarritoSesion", b =>
                 {
@@ -28,8 +31,10 @@ namespace ServicioTienda.Api.CarritoCompra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarritoSesionId"));
+
                     b.Property<DateTime?>("FechaCreacion")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("CarritoSesionId");
 
@@ -42,15 +47,17 @@ namespace ServicioTienda.Api.CarritoCompra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarritoSesionDetalleId"));
+
                     b.Property<int>("CarritoSesionId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("FechaCreacion")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("libroSeleccionado")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CarritoSesionDetalleId");
 

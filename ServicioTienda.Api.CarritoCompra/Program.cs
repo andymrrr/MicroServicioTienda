@@ -14,7 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContextCarrito>(op =>
 {
-    op.UseMySQL(builder.Configuration.GetConnectionString("CarritoCompra"));
+    op.UseSqlServer(builder.Configuration.GetConnectionString("CarritoCompra"));
 });
 builder.Services.AddMediatR(opcion => opcion.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 builder.Services.AddHttpClient("libros", config =>

@@ -12,7 +12,21 @@ services:
       context: .
       dockerfile: ServicioTienda.Api.Libro/Dockerfile
 
+  serviciotienda.api.carritocompra:
+    image: ${DOCKER_REGISTRY-}serviciotiendaapicarritocompra
+    build:
+      context: .
+      dockerfile: ServicioTienda.Api.CarritoCompra/Dockerfile
+
+  serviciotienda.api.gateway:
+    image: ${DOCKER_REGISTRY-}serviciotiendaapigateway
+    build:
+      context: .
+      dockerfile: ServicioTienda.Api.Gateway/Dockerfile
+
 networks:
   default:
     external:
         name: redmicroservicio
+
+

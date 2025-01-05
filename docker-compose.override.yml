@@ -6,12 +6,30 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
     ports:
-      - "8080"
+      - "8081:8080"  # Puerto 8081 en el host mapeado al puerto 8080 del contenedor
 
   serviciotienda.api.libro:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
     ports:
-      - "8080"
+      - "8082:8080"  # Puerto 8082 en el host mapeado al puerto 8080 del contenedor
+
+  serviciotienda.api.carritocompra:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - Servicio__libros=http://serviciotienda.api.libro:8080
+    ports:
+      - "8083:8080"  # Puerto 8083 en el host mapeado al puerto 8080 del contenedor
+
+
+  serviciotienda.api.gateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+    depends_on:
+      - serviciotienda.api.libro
+    ports:
+      - "8084:8080" # Puerto 8084 en el host mapeado al puerto 8080 del contenedor
 

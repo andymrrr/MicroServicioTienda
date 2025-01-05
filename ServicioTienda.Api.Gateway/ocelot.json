@@ -1,0 +1,30 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Libros/BuscarTodo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "serviciotienda.api.libro",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Libros/BuscarTodo",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Libros/BuscarLibro/{guid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "serviciotienda.api.libro",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Libros/{guid}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+
+    }
+  ]
+}

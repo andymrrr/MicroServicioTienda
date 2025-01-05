@@ -32,7 +32,7 @@ namespace ServicioTienda.Api.Libro.Controllers
             return await _mediator.Send(consulta);
         }
 
-        [HttpGet("BuscarAutor", Name = "BuscarAutor")]
+        [HttpGet("BuscarLibro/{guid}", Name = "BuscarLibro")]
         [ProducesResponseType(typeof(LibroVm), (int)(HttpStatusCode.OK))]
         public async Task<ActionResult<LibroVm>> BuscarAutor(Guid? guid)
         {

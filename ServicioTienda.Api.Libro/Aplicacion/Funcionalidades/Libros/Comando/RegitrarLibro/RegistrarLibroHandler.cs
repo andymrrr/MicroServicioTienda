@@ -2,14 +2,18 @@
 using MediatR;
 using ServicioTienda.Api.Libro.Data.Context;
 using ServicioTienda.Api.Libro.Modelo;
+using ServicioTienda.Api.RabbitMQ.Bus.Data.Interfaz;
+using ServicioTienda.Api.RabbitMQ.Bus.EventoCola;
 
 namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Comando.RegitrarLibro
 {
     public class RegistrarLibroHandler : IRequestHandler<RegistrarLibroComando, Unit>
     {
         public readonly ContextLibreria _context;
-        public RegistrarLibroHandler(ContextLibreria context)
+        private readonly IRabbitEventBus _rabbitEventBus;
+        public RegistrarLibroHandler(ContextLibreria context, IRabbitEventBus rabbitEventBus)
         {
+            _rabbitEventBus = rabbitEventBus;
             _context = context;
         }
         public async Task<Unit> Handle(RegistrarLibroComando request, CancellationToken cancellationToken)
@@ -24,6 +28,7 @@ namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Comando.Reg
             _context.Libros.Add(libro);
             var resultado = await _context.SaveChangesAsync();
 
+            _rabbitEventBus.Publish(new ColaEventosEmail("andymrrrr@gmail.com", "Prueba", "Esto es una prueba"));
             if (resultado > 0)
             {
                 return Unit.Value;

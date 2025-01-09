@@ -226,3 +226,7 @@ C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\D
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\RabbitMQ.Client.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\ServicioTienda.Api.RabbitMQ.Bus.dll
+C:\Users\andym\Desktop\GitHub\MicroServicioTienda\ServicioTienda.Api.Autor\bin\Debug\net8.0\ServicioTienda.Api.RabbitMQ.Bus.pdb

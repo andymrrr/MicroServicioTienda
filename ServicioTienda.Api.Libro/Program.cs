@@ -6,12 +6,15 @@ using System.Globalization;
 using System.Reflection;
 using AutoMapper;
 using ServicioTienda.Api.Libro.Mapper;
+using ServicioTienda.Api.RabbitMQ.Bus;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddServicioRabbitMQ(builder.Configuration);
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ContextLibreria>(opt =>
 {

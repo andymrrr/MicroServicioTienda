@@ -1,5 +1,6 @@
 {
   "Routes": [
+    //##############Libros#####################
     {
       "DownstreamPathTemplate": "/api/Libros/BuscarTodo",
       "DownstreamScheme": "http",
@@ -10,7 +11,8 @@
         }
       ],
       "UpstreamPathTemplate": "/Libros/BuscarTodo",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "RequestIdKey": "LibroTodo"
 
     },
     {
@@ -23,8 +25,54 @@
         }
       ],
       "UpstreamPathTemplate": "/Libros/{guid}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DelegatingHandlers": [
+        "LibroHandler"
+      ]
+
+    },
+    //##############Autores#####################
+    {
+      "DownstreamPathTemplate": "/api/Autor/BuscarTodo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "serviciotienda.api.autor",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Autor/BuscarTodo",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "RequestIdKey": "AutoresTodo"
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/Autor/BuscarAutor/{guid}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "serviciotienda.api.autor",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Autor/{guid}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+
+    },
+    //##############Carrito#####################
+    {
+      "DownstreamPathTemplate": "/api/Carrito/BuscarCarrito/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "serviciotienda.api.carritocompra",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/Carrito/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
 
     }
-  ]
+  ],
+  "GlobalConfiguration": {}
 }

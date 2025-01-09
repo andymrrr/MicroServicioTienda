@@ -33,7 +33,7 @@ namespace ServicioTienda.Api.Autor.Controllers
             var consulta = new BuscarTodosAutoresConsulta();
             return await _mediator.Send(consulta);
         }
-        [HttpGet("BuscarAutor", Name = "BuscarAutor")]
+        [HttpGet("BuscarAutor/{guid}", Name = "BuscarAutor")]
         [ProducesResponseType(typeof(AutorLibroVM), (int)(HttpStatusCode.OK))]
         public async Task<ActionResult<AutorLibroVM>> BuscarAutor(string guid)
         {

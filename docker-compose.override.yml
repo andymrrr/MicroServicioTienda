@@ -28,8 +28,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
+      - Servicio__autores=http://serviciotienda.api.gateway:8084 
     depends_on:
       - serviciotienda.api.libro
+      - serviciotienda.api.autor
     ports:
       - "8084:8080" # Puerto 8084 en el host mapeado al puerto 8080 del contenedor
 

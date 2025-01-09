@@ -9,6 +9,8 @@ using ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Consultas.Busca
 using ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Vm;
 using ServicioTienda.Api.Libro.Data.Context;
 using ServicioTienda.Api.Libro.Modelo;
+using ServicioTienda.Api.RabbitMQ.Bus.Data.Interfaz;
+using ServicioTienda.Api.RabbitMQ.Bus.EventoCola;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,24 +91,40 @@ namespace ServicioTienda.Api.Libro.Tests
             Assert.True(resultado.Any());
         }
         [Fact]
-        public async void GuardarLibro()
+        public async Task GuardarLibro()
         {
+            // Configurar DbContext en memoria
             var options = new DbContextOptionsBuilder<ContextLibreria>()
                 .UseInMemoryDatabase(databaseName: "BaseDatosLibro")
                 .Options;
 
             var contexto = new ContextLibreria(options);
 
-            var request = new RegistrarLibroComando();
-            request.Titulo = "Libro de Microservice";
-            request.AutorLibro = Guid.Empty;
-            request.FechaPublicacion = DateTime.Now;
+            // Configurar mock de IRabbitEventBus
+            var mockRabbitEventBus = new Mock<IRabbitEventBus>();
 
-            var manejador = new RegistrarLibroHandler(contexto);
+            // Configurar request
+            var request = new RegistrarLibroComando
+            {
+                Titulo = "Libro de Microservice",
+                AutorLibro = Guid.NewGuid(),
+                FechaPublicacion = DateTime.Now
+            };
 
-            var libro = await manejador.Handle(request, new CancellationToken());
+            // Instanciar handler con las dependencias simuladas
+            var manejador = new RegistrarLibroHandler(contexto, mockRabbitEventBus.Object);
 
-            Assert.True(libro != null);
+            // Ejecutar el handler
+            var result = await manejador.Handle(request, CancellationToken.None);
+
+            // Verificar que el libro se guardó en la base de datos
+            var libroGuardado = await contexto.Libros.FirstOrDefaultAsync();
+            Assert.NotNull(libroGuardado);
+            Assert.Equal("Libro de Microservice", libroGuardado.Titulo);
+
+            // Verificar que RabbitEventBus publicó el evento
+            mockRabbitEventBus.Verify(bus => bus.Publish(It.IsAny<ColaEventosEmail>()), Times.Once);
         }
+
     }
 }

@@ -1,12 +1,19 @@
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using ServicioTienda.Api.Gateway.Externo.Interfaz;
+using ServicioTienda.Api.Gateway.Externo.Repositorio;
+using ServicioTienda.Api.Gateway.Handler.Libros;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddSingleton<IAutorExterno, RepositorioAutorExterno>();
+builder.Services.AddHttpClient("ServicioAutor", config =>
+{
+    config.BaseAddress = new Uri(builder.Configuration["Servicios:autores"]);
+});
+
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-builder.Services.AddOcelot();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddOcelot().AddDelegatingHandler<LibroHandler>(false);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

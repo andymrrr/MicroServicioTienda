@@ -19,7 +19,7 @@ namespace ServicioTienda.Api.CarritoCompra.Data.RepositorioRemoto.Libros
             try
             {
                 var cliente = _httpClientFactory.CreateClient("libros");
-                var respuesta = await cliente.GetAsync($"/api/Libros/BuscarAutor?guid={guid}");
+                var respuesta = await cliente.GetAsync($"/api/Libros/BuscarLibro/{guid}");
                 if (respuesta.IsSuccessStatusCode)
                 {
                     var contenido = await respuesta.Content.ReadAsStringAsync();

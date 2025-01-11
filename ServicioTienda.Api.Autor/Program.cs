@@ -18,6 +18,7 @@ builder.Services.AddControllers().AddFluentValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddServicioRabbitMQ(builder.Configuration);
 builder.Services.AddTransient<IEventoManejador<ColaEventosEmail>, ManejadorEventoEmail>();
+builder.Services.AddTransient<ManejadorEventoEmail>();
 builder.Services.AddDbContext<ContextAutor>(op =>
 {
     op.UseNpgsql(builder.Configuration.GetConnectionString("Autor"));

@@ -662,6 +662,7 @@
         "dependencies": {
           "MediatR": "12.4.1",
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.1",
           "Newtonsoft.Json": "13.0.3",
           "RabbitMQ.Client": "6.1.0"
         },

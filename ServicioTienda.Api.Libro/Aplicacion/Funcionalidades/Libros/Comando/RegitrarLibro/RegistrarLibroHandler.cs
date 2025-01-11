@@ -28,7 +28,7 @@ namespace ServicioTienda.Api.Libro.Aplicacion.Funcionalidades.Libros.Comando.Reg
             _context.Libros.Add(libro);
             var resultado = await _context.SaveChangesAsync();
 
-            _rabbitEventBus.Publish(new ColaEventosEmail("andymrrrr@gmail.com", "Prueba", "Esto es una prueba"));
+            _rabbitEventBus.Publish(new ColaEventosEmail("andymrrrr@gmail.com",request.Titulo, "Esto es una prueba"));
             if (resultado > 0)
             {
                 return Unit.Value;

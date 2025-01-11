@@ -12,7 +12,7 @@ namespace ServicioTienda.Api.Autor.ManejadorRabbit
         }
         public Task Handle(ColaEventosEmail @event)
         {
-            _logger.LogInformation($"Este es el valor que consumo de RabbitMQ {@event.Contenido}");
+            _logger.LogInformation($"Este es el valor que consumo de RabbitMQ {@event.Titulo}");
 
             return Task.CompletedTask;
         }
